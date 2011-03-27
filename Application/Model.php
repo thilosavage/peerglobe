@@ -356,7 +356,7 @@ abstract class Model {
 	// clear the object
 	function clear(){
 		$this->row = null;
-		$this->data = null;
+		$this->rows = array();
 		$this->query = '';
 		$this->values = null;
 		$this->set = null;

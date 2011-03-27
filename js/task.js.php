@@ -15,12 +15,12 @@ function taskLoadModule(task_id) {
 	});
 }
 
-function taskCreateNew() {
-	
-	$.get(siteUrl+'task/ajax_editForm/new',function(d){
-		$('#go').html(d);
-	});	
+function taskEditForm(task_id) {
 
+	$.get(siteUrl+'task/ajax_editForm/'+task_id,function(d){
+		lightboxOpen(d);
+	});
+	
 }
 
 function taskNoteSave(task_user_id) {
@@ -44,7 +44,6 @@ function taskNoteEdit(task_user_id) {
 		$('#submission-note-ct').html(notetext);
 
 }
-
 
 
 

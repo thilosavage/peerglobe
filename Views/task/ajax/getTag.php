@@ -1,0 +1,1 @@
+<?phpif ($match) {	$data['match'] = " <span style='background-color: blue; margin: 2px; border: 1px solid gray; color: white; font-size: 11px; padding: 4px;'>".$match." [X]</span> ";}else {	$data['match'] = null;}$data['empty'] = $empty;echo json_encode($data);?>

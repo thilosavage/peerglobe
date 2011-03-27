@@ -10,12 +10,10 @@
 
 }
 
-
 .task-row {
-	padding: 16px;
 	border: 1px solid black;
-	width: 600px;
-	position: relative;
+	width: 550px;
+	height: 102px;
 }
 
 .skill-hover {
@@ -37,7 +35,7 @@
 }
 
 .task-skills {
-
+	padding: 8px;
 	padding-left: 20px;
 	font-size: 12px;
 

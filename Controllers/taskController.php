@@ -65,12 +65,51 @@ class taskController extends Controller {
 		$this->vars('note',$_POST['note']);
 	}
 	
-	function ajax_editForm($new) {
-	
-		
-		$this->vars('new',$new);
+	function ajax_editForm($task_id) {
+
+		if ($task_id) {
+			$tasksObj = new Tasks($task_id);
+			$this->vars('task',$tasksObj->row);
+		}
+		$this->vars('task_id',$task_id);
 	
 	}
+	
+	function ajax_getTag($phrase) {
+	
+		$skillsObj = new Skills;
+	
+		$skillsObj->getTagMatches($phrase);
+		
+		
+		$empty = false;
+		if (count($skillsObj->rows) == 1) {
+			$match = $skillsObj->row['name'];
+		}
+		else {
+			$match = null;
+		}
+		
+		if (count($skillsObj->rows) == 0) {
+			$empty = true;
+		}
+		
+		$this->vars('empty',$empty);
+		$this->vars('match',$match);
+	}
+	
+	
+/*
+			task_id
+			creator_id
+			desc
+			isntructions
+			guid
+			medium
+			exp
+			'medium' => $_POST['medium'];
+			'exp' => rand(3,10)	
+*/
 	
 }
 ?>

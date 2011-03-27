@@ -41,25 +41,32 @@ class Tasks extends Model {
 		$skills_tasksObj = new Skills_tasks;
 		$skillsObj = new Skills;
 		$usersObj = new Users;
+
 		
 		foreach ($this->rows as $k => $task) {
-			
-			$skills_tasksObj->load(array('task_id'=>$task['task_id']));
-			
-			foreach ($skills_tasksObj->rows as $k => $skill_task) {
-				$skillsObj->load($skill_task['skill_id']);
-				$skillRows[] = array_merge($skills_tasksObj->rows[$k],$skillsObj->row);
 
+			$skillRows = array();
+
+			$skills_tasksObj->load(array('task_id'=>$task['task_id']));
+
+			foreach ($skills_tasksObj->rows as $sk => $skill_task) {
+				$skillsObj->load($skill_task['skill_id']);
+				$skillRows[] = array_merge($skills_tasksObj->rows[$sk],$skillsObj->row);
 			}
+			
+			$skills_tasksObj->clear();
 			
 			$usersObj->load($task['creator_id']);
 			
 			$this->tasks[$k] = $task;
 			$this->tasks[$k]['creator'] = $usersObj->row['email'];
 			$this->tasks[$k]['skills'] = $skillRows;
-			unset($skillRows);
-			
-		}	
+
+		}
+		
+
+		
+		
 		return $this->tasks;
 	}
 	

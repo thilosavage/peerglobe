@@ -8,7 +8,7 @@ class tasksController extends Controller {
 	
 		$tasksObj = new Tasks;
 		$tasksObj->getAll();
-
+		
 		$this->vars('tasks',$tasksObj->tasks);	
 	
 	}
