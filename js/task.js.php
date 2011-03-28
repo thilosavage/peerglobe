@@ -46,5 +46,41 @@ function taskNoteEdit(task_user_id) {
 }
 
 
+function taskGetTags(phrase) {
+
+	$.get(siteUrl+'task/ajax_getTags/'+phrase,function(d){
+	
+		$('#task-tag-select').remove();
+	
+		var r = "<div id='task-tag-select' style='position: absolute; top: 21px; width: 200px; padding: 5px; left: 5px; border: 1px solid black; background-color: white;'>";
+		r += d;
+		r += "</div>";
+
+		$('#task-tag-bin').append(r);
+		
+		setTimeout(function(){
+			$("#slider").slider();
+		},2000);
+		//phrase.val('');
+	
+	});	
+
+}
+
+function taskSkillAdd(skill_id) {
+	
+	$('#task-tags').val('');
+	
+	var b = '<div>';
+	b += "<img src='"+siteUrl+"images/skillicon/"+skill_id+".png'> ";
+	b += "Exp: <input size='9' id='"+skill_id+"' type='text'> ";
+	b += "[Remove]";
+	b += "</div>";
+	
+	$('#task-tag-bin').append(b);
+
+	$('#task-tag-select').remove();
+
+}
 
 </script>

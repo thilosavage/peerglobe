@@ -33,24 +33,7 @@ $(function(){
 	
 	
 	$('#task-tags').live('keyup',function() {
-	
-			var phrase = $(this);
-	
-			$.getJSON(siteUrl+'task/ajax_getTag/'+phrase.val(),function(d){
-			
-				if (d.empty) {
-					$('#task-tag-error').html("<span style='background-color: red;'>No tags exist starting with <em>"+phrase.val()+"</em></span>");
-				}
-				
-				
-				
-				if (d.match) {
-					$('#task-tag-bin').append(d.match);
-					phrase.val('');
-				}
-				
-			});		
-	
+			taskGetTags($(this).val());
 	})
 });
 

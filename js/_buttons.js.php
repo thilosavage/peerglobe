@@ -12,4 +12,13 @@ $('.taskNoteEdit').live('click',function(){taskNoteEdit($(this).attr('id'));});
 $('.taskShowTab').live('click',function(){taskShowTab($(this).attr('tab'));});
 $('.lightboxClose').live('click',function(){lightboxClose();});
 
+$('.taskSkillAdd').live('click',function(){taskSkillAdd($(this).attr('id'));});
+
+$('#task-tags').live('click',function(){
+	var t = $(this);
+	if (t.val() == '') {
+		taskGetTags('');
+	}
+})
+
 </script>

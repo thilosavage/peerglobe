@@ -1,13 +1,35 @@
+<DIV class=carpe_slider_group>
+                <DIV class=carpe_horizontal_slider_display_combo>
+                  <DIV class=carpe_slider_display_holder>
+                    <!-- Default value: 0 -->
+                    <input name="Input" class=carpe_slider_display id="display1" value="<?=$row['slider_val']?>" />
+                  </DIV>
+                  <DIV class=carpe_horizontal_slider_track>
+                    <DIV class=carpe_slider_slit></DIV>
+                    <DIV class=carpe_slider id=slider1 display="display1" style="left:<?=$row['slider_val']?>px"></DIV>
+                  </DIV>
+                </DIV>
+                <DIV class=carpe_horizontal_slider_display_combo></DIV>
+                <DIV class=carpe_horizontal_slider_display_combo></DIV>
+                <DIV class=carpe_horizontal_slider_display_combo></DIV>
+              </DIV>
+
 <?php
 
 echo "<table><tr><td>";
 
-echo "What are the tags?<br>";
-echo "<div id='task-tag-bin'></div>";
+echo "<div>What level? <input size='8' id='tag-global-exp'></div>";
+
+echo "<div>How much exp? <input size='8' id='tag-global-exp'></div>";
+
+echo "What skills does it improve?<br>";
+
 //echo "<textarea cols='35' id='task-tags'></textarea>";
 echo "<input type='text' id='task-tags'>";
 
-echo "<div id='task-tag-error'></div>";
+echo "<div id='task-tag-bin' style='position: relative;'>";
+
+echo "</div>";
 
 echo "<br>";
 

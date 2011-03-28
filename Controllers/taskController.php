@@ -75,27 +75,15 @@ class taskController extends Controller {
 	
 	}
 	
-	function ajax_getTag($phrase) {
+	function ajax_getTags($phrase) {
 	
 		$skillsObj = new Skills;
 	
 		$skillsObj->getTagMatches($phrase);
+	
+		$this->vars('phrase',$phrase);
+		$this->vars('skills', $skillsObj->rows);
 		
-		
-		$empty = false;
-		if (count($skillsObj->rows) == 1) {
-			$match = $skillsObj->row['name'];
-		}
-		else {
-			$match = null;
-		}
-		
-		if (count($skillsObj->rows) == 0) {
-			$empty = true;
-		}
-		
-		$this->vars('empty',$empty);
-		$this->vars('match',$match);
 	}
 	
 	
