@@ -56,13 +56,7 @@ function taskGetTags(phrase) {
 		r += d;
 		r += "</div>";
 
-		$('#task-tag-bin').append(r);
-		
-		setTimeout(function(){
-			$("#slider").slider();
-		},2000);
-		//phrase.val('');
-	
+		$('#task-tag-bin').append(r);	
 	});	
 
 }
@@ -73,7 +67,16 @@ function taskSkillAdd(skill_id) {
 	
 	var b = '<div>';
 	b += "<img src='"+siteUrl+"images/skillicon/"+skill_id+".png'> ";
-	b += "Exp: <input size='9' id='"+skill_id+"' type='text'> ";
+	
+	var ef = parseInt($('#slider').css('left'))
+	if (!ef) {
+		ef = 1;
+	}
+	else {
+		ef = ef * 3;
+	}
+	
+	b += "Exp: +<span class='tag-exp' id='"+skill_id+"'>"+ef+"</span>";
 	b += "[Remove]";
 	b += "</div>";
 	

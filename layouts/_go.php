@@ -2,6 +2,12 @@
 
 <?php inc::js();?>
 <?php inc::css();?>
+
+<script>
+
+
+</script> 
+
 <html>
 <body>
 
