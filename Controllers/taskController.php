@@ -87,6 +87,14 @@ class taskController extends Controller {
 	}
 	
 	
+	
+	function ajax_editSave() {
+	
+		print_r($_POST);
+	
+	
+	}
+	
 /*
 			task_id
 			creator_id

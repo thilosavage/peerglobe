@@ -13,6 +13,8 @@ $('.taskShowTab').live('click',function(){taskShowTab($(this).attr('tab'));});
 $('.lightboxClose').live('click',function(){lightboxClose();});
 
 $('.taskSkillAdd').live('click',function(){taskSkillAdd($(this).attr('id'));});
+$('.taskSkillRemove').live('click',function(){taskSkillRemove($(this).attr('skill_id'));});
+$('.taskEditSave').live('click',function(){taskEditSave($(this).attr('task_id'));});
 
 $('#task-tags').live('click',function(){
 	var t = $(this);
