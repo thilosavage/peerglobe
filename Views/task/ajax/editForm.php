@@ -59,16 +59,7 @@ echo "<textarea cols='35' id='task-instructions'></textarea>";
 
 echo "<br>";
 
-/*
-echo "Upload an image? Optional.<br><input type='file'>";
-echo "<h5>Record a demonstration? Optional.</h5>";
-echo "<div style='text-align: center'>asdf";
-echo vid::render("mode=record&key=784552182c");
-echo "</div>";
-echo "<br><br>";
-*/
-
-echo "<div style='text-align: center;'><input task_id='".$task_id."' type='submit' class='taskEditSave'></div>";
+echo "<div style='text-align: center;'><input task_id='".$task_id."' type='submit' class='taskEditNext'></div>";
 
 
 echo "</div>";

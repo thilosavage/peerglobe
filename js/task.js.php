@@ -94,7 +94,7 @@ function taskSkillRemove(skill_id) {
 }
 
 
-function taskEditSave(task_id) {
+function taskEditNext(task_id) {
 
 	var meh = new Array();
 
@@ -115,9 +115,21 @@ function taskEditSave(task_id) {
 		instructions: $('#task-instructions').val()
 	}
 	
-	$.post(siteUrl+'task/ajax_editSave',fields,function(d){
-		console.log(d);
+	$.post(siteUrl+'task/ajax_editNext',fields,function(d){
+		$('#lightbox-box').html(d);
 	});
 }
 
+
+function taskEditSave(task_id) {
+
+	var fields = {
+	
+	}
+	
+	$.post(siteUrl+'task/ajax_editSave',fields,function(d){
+		$('#lightbox-box').html('Thanks');
+	});
+	
+}
 </script>

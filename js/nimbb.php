@@ -1,9 +1,9 @@
 <script>
 function Nimbb_initCompleted(idPlayer){
+
 	_Nimbb = document[idPlayer];
-	
 	console.log(idPlayer);
-	
+
 }
 
 function Nimbb_videoSaved(idPlayer) {
@@ -22,9 +22,8 @@ function Nimbb_videoSaved(idPlayer) {
 		});
 	}
 	else if (idPlayer =='nimbbdemo') {
-		//taskEditSave();
+		// no variables can be passed to taskEditSave.. sorry.. its nimbbs fault
+		taskEditSave();
 	}
-	
-	
 }
 </script>
