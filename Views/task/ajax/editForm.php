@@ -1,10 +1,15 @@
-
-
 <?php
 
-//echo "<table><tr><td>";
+echo "<div style='padding: 20 20 20 80; text-align: center;'>";
 
-echo "<div style='padding: 80px;'>";
+if ($task_id) {
+	echo "<h3>Edit a mission</h3>";
+}
+else {
+	echo "<h3>Create a new mission</h3>";
+}
+
+//echo "<table><tr><td>";
 
 echo "What is the mission?<br>";
 echo "<textarea cols='52' id='task-desc'></textarea>";
@@ -18,9 +23,12 @@ echo "<br><br>";
 echo "What skills does it improve?<br>";
 
 //echo "<textarea cols='35' id='task-tags'></textarea>";
-echo "<input type='text' id='task-tags' style='height: 20px; width: 80px; padding: 3px;'>";
+echo "<input type='text' id='task-tags' style='height: 30px; width: 182px; padding: 5px;'>";
 
 echo "<div id='task-tag-bin' style='position: relative;'>";
+
+
+
 
 echo "</div>";
 
@@ -46,23 +54,13 @@ echo "<br>";
 echo "<hr shading='no' width='500'>";
 echo "<br>";
 
-echo "Extra instructions? Optional.<br>";
+echo "Extra instructions? Optional.<br><br>";
 echo "<textarea cols='35' id='task-instructions'></textarea>";
 
 echo "<br>";
 
-echo "Upload an image? Optional.<br><input type='file'>";
+echo "<div style='text-align: center;'><input task_id='".$task_id."' type='submit' class='taskEditNext'></div>";
 
-echo "<div style='text-align: center;'><input type='submit' class='taskEditSave'></div>";
-
-
-//echo "</td><td>";
-echo "<h5>Record a demonstration? Optional.</h5>";
-//echo vid::render("mode=record&key=784552182c");
-
-//echo "</td></tr></table>";
-
-echo "<input type='hidden' name='task_id' value='".$task_id."'>";
 
 echo "</div>";
 

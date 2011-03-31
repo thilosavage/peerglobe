@@ -9,4 +9,9 @@ $('.task-row').live('mouseout',function() {
 	t.removeClass('skill-hover');
 });
 
+$('.taskSkillAdd').live('mouseover',function() {
+	var t = $(this).attr('name');
+	$('#task-tags').val(t);
+});
+
 </script>

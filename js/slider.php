@@ -31,7 +31,9 @@ $('#zone').live('mousemove',function(e){
 		
 		$('#task-tag-bin').children('div').children('.tag-exp').each(function(){
 			
-			var hvalue = left  * 3;
+			var hvalue = left  * 2;
+			
+			hvalue = hvalue + Math.floor(Math.random()*Math.floor(hvalue/2));
 			
 			$(this).html(hvalue);
 		
@@ -51,6 +53,11 @@ $('#slider').live('mousedown',function(e){
 	return false;
 });
 $('#slider').live('mouseup',function(){
+	clickt = false;
+	return false;
+});
+
+$('#zone').live('mouseleave',function(){
 	clickt = false;
 	return false;
 });

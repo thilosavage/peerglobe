@@ -87,6 +87,21 @@ class taskController extends Controller {
 	}
 	
 	
+	
+	function ajax_editSave() {
+	
+		//print_r($_POST);
+	
+	
+	}
+	
+	
+	function ajax_editNext() {
+	
+		//print_r($_POST);
+	
+	
+	}		
 /*
 			task_id
 			creator_id
@@ -98,6 +113,7 @@ class taskController extends Controller {
 			'medium' => $_POST['medium'];
 			'exp' => rand(3,10)	
 */
+
 	
 }
 ?>
