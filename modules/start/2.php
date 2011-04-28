@@ -1,0 +1,1 @@
+<?phpecho "<h3>Nice!</h3>";echo "<h3>You just gained 26 exp at \"Clicking here to Continue\" skill!</h3>";echo "<div>".im::age('skillicon/pointer.png')."+26</div>";echo "<div>You are now level 2 at ".im::age('skillicon/pointer.png')." Clicking</div>";echo "<br>";echo "<span class='fakelink startContentLoad' page='3'>Click here to continue</span>";?>

@@ -3,6 +3,9 @@
 <?php inc::css();?>
 <html>
 <body>
+
+<div style='height: 100px; background-color: #99ccff;'></div>
+
 <?php $this->render_view(); ?>
 </body>
 </html>
