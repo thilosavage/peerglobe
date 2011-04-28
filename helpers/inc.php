@@ -36,7 +36,7 @@ class inc{
 	
 	public function page($page,$data=array()){
 		ob_start();
-		include(site::root.'/pages/'.$page.'.php');
+		include(site::root.'pages/'.$page.'.php');
 		$bah = ob_get_contents();
 		ob_end_clean();
 		return $bah;
@@ -44,7 +44,7 @@ class inc{
 	
 	public function module($module,$data=array()){
 		ob_start();
-		include(site::root.'/modules/'.$module.'.php');
+		include(site::root.'modules/'.$module.'.php');
 		$bah = ob_get_contents();
 		ob_end_clean();
 		return $bah;
@@ -52,18 +52,18 @@ class inc{
 	
 	public static function form($form,$data=array()){
 		ob_start();
-		include(site::root.'/forms/'.$form.'.php');
+		include(site::root.'forms/'.$form.'.php');
 		$bah = ob_get_contents();
 		ob_end_clean();
 		return $bah;
 	}
 	
-	public static function js($file='common.php',$path='javascript/',$passPath=true){
-		$ret = "<script type='text/javascript' src='".site::url.$path.$file;
+	public static function js($file='common.php',$path='public/javascript/',$passPath=true){
+		$ret = "<script src='".site::url.$path.$file;
 		$ret .= "' type='text/javascript'></script>";
 		echo $ret;
 	}
-	public static function css($file='common.php',$path='styles/',$passPath=true){
+	public static function css($file='common.php',$path='public/styles/',$passPath=true){
 		$ret = "<link href='".site::url.$path.$file;
 		$ret .= "' rel='stylesheet' type='text/css' />";
 		echo $ret;

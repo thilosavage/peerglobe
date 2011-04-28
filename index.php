@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 // require autoload
 require_once('Application/__autoload.php');
+require_once('Application/error.php');
 
 // require config
 require_once('config.php');

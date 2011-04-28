@@ -32,6 +32,14 @@ class indexController extends Controller {
 	// if your site is bigger than one level
 	// create new controllers for your pages
 	function index(){
+	
+		if (empty($_SESSION['user'])) {
+			header('location: '.site::url.'start');
+		}
+		else {
+			header('location: '.site::url.'go');
+		}
+	
 		$this->layout = '_default';
 		$data['blah'] = '!!!!';
 		$this->vars('data',$data);

@@ -20,4 +20,7 @@ body {
 	text-decoration: underline;
 	cursor:pointer;cursor:hand; 
 }
+li {
+ list-style-type: none;
+}
 </style>

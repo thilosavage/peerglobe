@@ -1,2 +1,6 @@
 The application finished without any errors..
+<<<<<<< HEAD
 [error#1706]
+=======
+[error#1778]
+>>>>>>> f6e96ac9ecf33eb36ce94a6ba9cd449ebdd21767

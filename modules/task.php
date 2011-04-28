@@ -4,24 +4,38 @@ $task = $data['task'];
 $trys = $data['trys'];
 $talks = $data['talks'];
 
+
 echo "<div id='task'>";
 
-echo "<h4>Mission page!</h4>";
 
-echo "<span class='tasksLoadAll fakelink'>Back to list</span>";
+
+
+if ($task['task_id'] == '4') {
+	echo "<div style='background-color: #99ff99; border: 1px solid black; padding: 10px;'>";
+	echo "<table><tr>";
+	echo "<td width='33%' style='text-align: center;'>Challenges are recorded with your webcam</td>";
+	echo "<td width='33%' style='text-align: center;'>Then points/awards are given by people better than you</td>";
+	echo "<td width='33%' style='text-align: center;'>To accept this challenge, hit 'Try It'</td>";
+	echo "</tr></table>";
+	echo "</div>";
+}
+else {
+	echo "<span class='tasksLoadAll fakelink'>Back to list</span>";
+}
+
 
 if ($task['tried']) {
 	echo "<ul id='tasknav'>";
 	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-details'>Details</li>";
 	echo "<li class='task-tab-on fakelink taskShowTab' tab='task-doit'>Your Results</li>";
-	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-tries'>People's Tries</li>";
+	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-tries'>Other Attempts</li>";
 	echo "</ul>";
 }
 else {
 	echo "<ul id='tasknav'>";
 	echo "<li class='task-tab-on fakelink taskShowTab' tab='task-details'>Details</li>";
 	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-doit'>Try It</li>";
-	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-tries'>People's Tries</li>";
+	echo "<li class='task-tab-off fakelink taskShowTab' tab='task-tries'>Other Attempts</li>";
 	echo "</ul>";
 }
 
@@ -54,14 +68,22 @@ echo "<div id='task-tabs' style='border: 1px black solid;'>";
 			
 			echo "</div>";
 		echo "</td><td valign='top'>";
-			echo "<h5>Expert Demonstration</h5>";
-			echo vid::render("guid=".$task['guid']."&key=784552182c","demo");
-
-			//echo vid::render("mode=record&key=784552182c","demo");
 			
-			echo "<div style='text-align: center;'>";
-			echo "<span tab='task-doit' style='padding: 14px; background-color: #005500; color: white;' class='fakelink taskShowTab'>Try it!</span>";
-			echo "</div>";
+			
+			if ($task['guid']) {
+				echo "<h5>Expert Demonstration</h5>";
+				echo vid::render("guid=".$task['guid']."&key=784552182c","demo");
+				echo "<div style='text-align: center;'>";
+				echo "<span tab='task-doit' style='padding: 14px; background-color: #005500; color: white;' class='fakelink taskShowTab'>Try it!</span>";
+				echo "</div>";				
+				
+			}
+			else {
+				echo "<h5>There is no demonstration for this challenge</h5>";
+
+			}
+			//echo vid::render("mode=record&key=784552182c","demo");
+
 		echo "</td></tr></table>";
 		
 	echo "</div>";
@@ -100,17 +122,27 @@ echo "<div id='task-tabs' style='border: 1px black solid;'>";
 			}
 			else {
 				echo "<div id='submission-warning'>";
-					echo "<h5>When you record -</h5>";
-					echo "<div style=''padding: 15px;'>";
-					echo " - Read the instructions first<br>";
-					echo " - Don't hit save until you have it down<br>";
-					echo " - Do not cheat. You will be banned<br>";
-					echo " - Good luck";
+				
+					if ($task['task_id'] == '4') {
+						echo "<h5>Okay!</h5>";
+						echo "To the right, hit 'accept'<br>";
+						echo "You should see yourself.<br>";
+						echo "If you don't, hit the settings icon and choose a camera.<br>";
+						echo "Then press record, make a face, and hit 'save'.<br>";
+
+					}			
+					else {
+						echo "<h5>When you record -</h5>";
+						echo "<div style=''padding: 15px;'>";
+						echo " - Read the instructions first<br>";
+						echo " - Don't hit save until you have it down<br>";
+						echo " - Do not cheat. You will be banned<br>";
+						echo " - Good luck";
+						echo "</div>";
+					}
+					
 					echo "</div>";
-				echo "</div>";
-				
-				
-				
+
 				echo "</td><td valign='top'>";
 				
 				echo "<h5 id='giveitashot'>Give it a shot</h5>";
